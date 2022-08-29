@@ -1,5 +1,5 @@
 import nltk
-# nltk.download('all')
+# nltk.download('all')                             #if some nltk error occurs
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
 
@@ -70,5 +70,5 @@ net = tflearn.regression(net)
 
 model = tflearn.DNN(net)
 
-model.fit(training, output, n_epoch=100, batch_size=8, show_metric=True)
+model.fit(training, output, n_epoch=500, batch_size=8, show_metric=True)
 model.save("model.tflearn")
