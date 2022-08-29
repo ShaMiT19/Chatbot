@@ -1,4 +1,4 @@
- python -u "/c/Users/shami/Desktop/Python Projects/chatbox/main.py"
+$python -u "/c/Users/shami/Desktop/Python Projects/chatbox/main.py"
 2022-08-29 13:44:56.405504: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
 2022-08-29 13:44:56.446061: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 WARNING:tensorflow:From C:\Users\shami\.conda\envs\chatbox\lib\site-packages\tensorflow\python\compat\v2_compat.py:101: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
