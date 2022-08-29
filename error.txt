@@ -1,0 +1,44 @@
+ python -u "/c/Users/shami/Desktop/Python Projects/chatbox/main.py"
+2022-08-29 13:44:56.405504: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-08-29 13:44:56.446061: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+WARNING:tensorflow:From C:\Users\shami\.conda\envs\chatbox\lib\site-packages\tensorflow\python\compat\v2_compat.py:101: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+curses is not supported on this machine (please install/reinstall curses for an optimal experience)
+Scipy not supported!
+Traceback (most recent call last):
+  File "C:/Users/shami/Desktop/Python Projects/chatbox/main.py", line 24, in <module>
+    wrds = nltk.word_tokenize(pattern)          #tokenize just gets us all the words from the patterns -> returns a list
+  File "C:\Users\shami\.conda\envs\chatbox\lib\site-packages\nltk\tokenize\__init__.py", line 129, in word_tokenize
+    sentences = [text] if preserve_line else sent_tokenize(text, language)
+  File "C:\Users\shami\.conda\envs\chatbox\lib\site-packages\nltk\tokenize\__init__.py", line 106, in sent_tokenize
+    tokenizer = load(f"tokenizers/punkt/{language}.pickle")
+  File "C:\Users\shami\.conda\envs\chatbox\lib\site-packages\nltk\data.py", line 750, in load
+    opened_resource = _open(resource_url)
+  File "C:\Users\shami\.conda\envs\chatbox\lib\site-packages\nltk\data.py", line 876, in _open
+    return find(path_, path + [""]).open()
+  File "C:\Users\shami\.conda\envs\chatbox\lib\site-packages\nltk\data.py", line 583, in find
+    raise LookupError(resource_not_found)
+LookupError:
+**********************************************************************
+  Resource ←[93mpunkt←[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  ←[31m>>> import nltk
+  >>> nltk.download('punkt')
+  ←[0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load ←[93mtokenizers/punkt/english.pickle←[0m
+
+  Searched in:
+    - 'C:\\Users\\shami/nltk_data'
+    - 'C:\\Users\\shami\\.conda\\envs\\chatbox\\nltk_data'
+    - 'C:\\Users\\shami\\.conda\\envs\\chatbox\\share\\nltk_data'
+    - 'C:\\Users\\shami\\.conda\\envs\\chatbox\\lib\\nltk_data'
+    - 'C:\\Users\\shami\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+    - ''
+**********************************************************************

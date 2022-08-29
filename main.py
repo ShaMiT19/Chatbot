@@ -60,7 +60,7 @@ training = numpy.array(training)                    #we need to convert them to 
 output = numpy.array(output)                        #we need to convert them to numpy arrays, because we need them for usign tflearn
 
 
-# tensorflow.reset_default_graph()                    #resets all the underlying settings of the tensorflow. Don't really need to focus on this.
+tensorflow.compat.v1.reset_default_graph()                   #resets all the underlying settings of the tensorflow. Don't really need to focus on this.
 
 net = tflearn.input_data(shape=[None, len(training[0])])
 net = tflearn.fully_connected(net, 8)
