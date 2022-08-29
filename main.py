@@ -1,4 +1,5 @@
 import nltk
+# nltk.download('all')
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
 
@@ -37,7 +38,6 @@ training = []
 output = []
 
 out_empty = [0 for _ in range(len(labels))]         #Adding zeros for each tags.
-print(out_empty)
 
 for x, doc in enumerate(docs_x):
     bag = []
@@ -56,5 +56,19 @@ for x, doc in enumerate(docs_x):
     training.append(bag)
     output.append(output_row)
 
-training = numpy.array(training)            #we need to convert them to numpy arrays, because we need them for usign tflearn
-output = numpy.array(output)                #we need to convert them to numpy arrays, because we need them for usign tflearn
+training = numpy.array(training)                    #we need to convert them to numpy arrays, because we need them for usign tflearn
+output = numpy.array(output)                        #we need to convert them to numpy arrays, because we need them for usign tflearn
+
+
+# tensorflow.reset_default_graph()                    #resets all the underlying settings of the tensorflow. Don't really need to focus on this.
+
+net = tflearn.input_data(shape=[None, len(training[0])])
+net = tflearn.fully_connected(net, 8)
+net = tflearn.fully_connected(net, 8)
+net = tflearn.fully_connected(net, len(output[0]), activation="softmax")        #gives us the probability of the 
+net = tflearn.regression(net)
+
+model = tflearn.DNN(net)
+
+model.fit(training, output, n_epoch=100, batch_size=8, show_metric=True)
+model.save("model.tflearn")
